@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: none;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.hole {
+    width: 130px;
+    height: 130px;
+    background-color: brown;
+    border-radius: 50%;
+    box-shadow: inset 0 10px 0 7px black;
+    /* padding: 10px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.mole {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise 0.3s ease-out;
+  
+}
+
+@keyframes rise {
+    0% {
+        transform: translateX(-50%) translateY(100%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0%);
+    }
+}
+
+.cursor {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+    height: 110px;
+    background-image: url(../img/icons8-половой-член-100.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-50%, -40%) rotate(-10deg);
+    transition: transform .1s;
+    pointer-events: none;
+}
+
+.cursor.active {
+    transform: translate(-20%, -20%) rotate(-90deg);
+}
